@@ -1,0 +1,69 @@
+++ echo Logging output to experiments/logs/faster_rcnn_end2end_VGG16_--set_EXP_DIR_test.txt.2017-12-19_19-27-32
+Logging output to experiments/logs/faster_rcnn_end2end_VGG16_--set_EXP_DIR_test.txt.2017-12-19_19-27-32
+++ ./tools/train_net.py --gpu 0 --solver models/kitti/VGG16/fpn_end2end_context/solver.prototxt --weights data/imagenet_models/VGG16.v2.caffemodel --imdb kittivoc_train --iters 80000 --cfg experiments/cfgs/fpn_end2end_context.yml --set EXP_DIR test
+Called with args:
+Namespace(cfg_file='experiments/cfgs/fpn_end2end_context.yml', gpu_id=0, imdb_name='kittivoc_train', max_iters=80000, pretrained_model='data/imagenet_models/VGG16.v2.caffemodel', randomize=False, set_cfgs=['EXP_DIR', 'test'], solver='models/kitti/VGG16/fpn_end2end_context/solver.prototxt')
+Using config:
+{'DATA_DIR': '/home/yangshun/PycharmProjects/fpn_context/data',
+ 'DEDUP_BOXES': 0.0625,
+ 'EPS': 1e-14,
+ 'EXP_DIR': 'test',
+ 'GPU_ID': 0,
+ 'MATLAB': 'matlab',
+ 'MODELS_DIR': '/home/yangshun/PycharmProjects/fpn_context/models/pascal_voc',
+ 'PIXEL_MEANS': array([[[ 102.9801,  115.9465,  122.7717]]]),
+ 'RNG_SEED': 3,
+ 'ROOT_DIR': '/home/yangshun/PycharmProjects/fpn_context',
+ 'TEST': {'BBOX_REG': True,
+          'HAS_RPN': True,
+          'MAX_SIZE': 1000,
+          'NMS': 0.3,
+          'PROPOSAL_METHOD': 'selective_search',
+          'RPN_MIN_SIZE': 8,
+          'RPN_NMS_THRESH': 0.7,
+          'RPN_POST_NMS_TOP_N': 300,
+          'RPN_PRE_NMS_TOP_N': 6000,
+          'SCALES': [600],
+          'SOFT_NMS': 1,
+          'SVM': False},
+ 'TRAIN': {'ASPECT_GROUPING': True,
+           'BATCH_SIZE': 128,
+           'BBOX_INSIDE_WEIGHTS': [1.0, 1.0, 1.0, 1.0],
+           'BBOX_NORMALIZE_MEANS': [0.0, 0.0, 0.0, 0.0],
+           'BBOX_NORMALIZE_STDS': [0.1, 0.1, 0.2, 0.2],
+           'BBOX_NORMALIZE_TARGETS': True,
+           'BBOX_NORMALIZE_TARGETS_PRECOMPUTED': True,
+           'BBOX_REG': True,
+           'BBOX_THRESH': 0.5,
+           'BG_THRESH_HI': 0.5,
+           'BG_THRESH_LO': 0.0,
+           'FG_FRACTION': 0.25,
+           'FG_THRESH': 0.5,
+           'HAS_RPN': True,
+           'IMS_PER_BATCH': 1,
+           'MAX_SIZE': 1000,
+           'PROPOSAL_METHOD': 'gt',
+           'RPN_BATCHSIZE': 256,
+           'RPN_BBOX_INSIDE_WEIGHTS': [1.0, 1.0, 1.0, 1.0],
+           'RPN_CLOBBER_POSITIVES': False,
+           'RPN_FG_FRACTION': 0.5,
+           'RPN_MIN_SIZE': 8,
+           'RPN_NEGATIVE_OVERLAP': 0.3,
+           'RPN_NMS_THRESH': 0.7,
+           'RPN_POSITIVE_OVERLAP': 0.7,
+           'RPN_POSITIVE_WEIGHT': -1.0,
+           'RPN_POST_NMS_TOP_N': 2000,
+           'RPN_PRE_NMS_TOP_N': 12000,
+           'SCALES': [400],
+           'SNAPSHOT_INFIX': '',
+           'SNAPSHOT_ITERS': 10000,
+           'USE_FLIPPED': True,
+           'USE_PREFETCH': False},
+ 'USE_GPU_NMS': True}
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+E1219 19:27:35.621628 25923 common.cpp:104] Cannot create Cublas handle. Cublas won't be available.
+E1219 19:27:35.631973 25923 common.cpp:111] Cannot create Curand generator. Curand won't be available.
+E1219 19:27:35.631995 25923 common.cpp:131] Curand not available. Skipping setting the curand seed.
+F1219 19:27:35.643955 25923 common.cpp:142] Check failed: error == cudaSuccess (30 vs. 0)  unknown error
+*** Check failure stack trace: ***
+./experiments/scripts/fpn_end2end_context_kitti.sh: 行 63: 25923 已放弃               (核心已转储) ./tools/train_net.py --gpu ${GPU_ID} --solver models/${PT_DIR}/${NET}/fpn_end2end_context/solver.prototxt --weights data/imagenet_models/VGG16.v2.caffemodel --imdb ${TRAIN_IMDB} --iters ${ITERS} --cfg experiments/cfgs/fpn_end2end_context.yml ${EXTRA_ARGS}
